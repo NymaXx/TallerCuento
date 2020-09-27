@@ -17,6 +17,6 @@ public class FinalScreen extends Screen {
 	}
 	
 	void move() {
-		super.move();
+		
 	}
 }

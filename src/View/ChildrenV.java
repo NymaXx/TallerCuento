@@ -21,7 +21,14 @@ public class ChildrenV extends ObjectsV {
 		app.image(this.img1,this.posX,this.posY,this.w,this.h);
 	}
 	
-	
+	void advice() {
+		if(dist(this.posX,this.posY, app.mouseX, app.mouseY)<=200) {
+			app.cursor(HAND);
+				}else {
+					app.cursor(ARROW);
+		}
+		
+	}
 	void interact() {
 		if (Main.gameS.getPosX() <= -188 && dist(this.posX,
 				this.posY, app.mouseX, app.mouseY)<=200) {

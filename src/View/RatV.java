@@ -13,4 +13,24 @@ public class RatV extends ObjectsV{
 		void paint() {
 			app.image(this.img4,this.posX,this.posY,this.w,this.h);
 		}
+		
+		
+		void advice() {
+			if(dist(this.posX+100, this.posY+30, app.mouseX, app.mouseY)<=120) {
+				app.cursor(HAND);
+					}else {
+						app.cursor(ARROW);
+			}
+			
+		}
+		void interact() {
+			if(dist(this.posX+100, this.posY+30, app.mouseX, app.mouseY)<=120) {
+				app.cursor(HAND);
+				this.w+=10;
+				this.h+=10;
+			}else {
+				app.cursor(ARROW);
+			}
+			
+		}
 }

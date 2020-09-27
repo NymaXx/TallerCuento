@@ -23,6 +23,9 @@ public class ObjectsV extends PApplet {
 		void paint(){
 			
 		}
+		void interact() {
+			
+		}
 
 		
 

@@ -32,10 +32,10 @@ public class Main extends PApplet{
 		flaut = new FlautistV(521,113,283,509, this);
 		sign = new SignV(0,0,206,78,this);
 		mayor = new MayorV(733,161,162,378,this);
-		rat = new RatV(28,374,467,212,this);
+		rat = new RatV(28,374,231,105,this);
 		start = new StartScreen(0,0, this);
 		fin = new FinalScreen(0,0,this);
-		gameS = new GameScreen(-200,0,this);
+		gameS = new GameScreen(0,0,this);
 		screen =0;
 		user.createArrayList();
 		
@@ -49,7 +49,7 @@ public class Main extends PApplet{
 		switch(screen) {
 		case 0:
 			start.paint();
-			start.change();
+			
 			break;
 			
 		case 1: 
@@ -59,7 +59,8 @@ public class Main extends PApplet{
 			rat.paint();
 			sign.paint();
 			
-			if(start.getPosX()<=188) {
+			
+			if(gameS.getPosX()<=-188) {
 			child.paint();
 		
 			}
@@ -75,12 +76,58 @@ public class Main extends PApplet{
 		text(mouseX + "X"+ " " + mouseY + "Y", mouseX, mouseY);
 	}
 	
+	public void mouseMoved() {//lineas de codigo para que cuando el mouse pase por encima
+		//de algun objeto de interaccion el cursor cambie y el usuario entienda que es posible interactuar.
+		switch(screen) {
+		case 0:
+			start.change();
+			
+			break;
+			
+		case 1: 
+		rat.advice();
+		mayor.advice();
+		flaut.advice();
+			if(start.getPosX()<=-188) {
+				
+				child.advice();
+				}
+		
+			break;
+			
+		case 2: 
+			
+			break;
+	}
+	}
 	
 	public void mousePressed() {
-		if(start.getPosX()<=188) {
+		switch(screen) {
+		case 0:
+			start.change();
 			
-			child.interact();
-			}
+			break;
+			
+		case 1: 
+			
+			rat.interact();
+			mayor.interact();
+			flaut.interact();
+			
+			if(start.getPosX()<=-188) {
+				
+				child.interact();
+				}
+		
+			break;
+			
+		case 2: 
+			
+			break;
+		}
+		
+		
+		
 	}
 	
 	
