@@ -18,7 +18,7 @@ public class Main extends PApplet{
 	RatV rat;
 	StartScreen start;
 	FinalScreen fin;
-	GameScreen gameS;
+	static GameScreen gameS;
 	static int screen;
 	
 	
@@ -28,14 +28,14 @@ public class Main extends PApplet{
 	
 	public void setup() {
 		user = new User("Mija", this);
-		child = new ChildrenV(1001, 249, 437, 378, this);
+		child = new ChildrenV(/*1001*/ 651, 249, 437, 378, this);
 		flaut = new FlautistV(521,113,283,509, this);
 		sign = new SignV(0,0,206,78,this);
 		mayor = new MayorV(733,161,162,378,this);
 		rat = new RatV(28,374,467,212,this);
 		start = new StartScreen(0,0, this);
 		fin = new FinalScreen(0,0,this);
-		gameS = new GameScreen(0,0,this);
+		gameS = new GameScreen(-200,0,this);
 		screen =0;
 		user.createArrayList();
 		
@@ -58,7 +58,11 @@ public class Main extends PApplet{
 			flaut.paint();
 			rat.paint();
 			sign.paint();
+			
+			if(start.getPosX()<=188) {
 			child.paint();
+		
+			}
 			break;
 			
 		case 2: 
@@ -72,6 +76,12 @@ public class Main extends PApplet{
 	}
 	
 	
+	public void mousePressed() {
+		if(start.getPosX()<=188) {
+			
+			child.interact();
+			}
+	}
 	
 	
 }
