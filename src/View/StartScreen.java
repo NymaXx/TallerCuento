@@ -15,8 +15,10 @@ PImage start;
 		app.image(this.start,this.posX,this.posY, app.width, app.height);
 	}
 	
-	void move() {
-		super.move();
+	void change() { //249 359     291   392
+		if(app.mouseX > 249 && app.mouseX < 359 && app.mouseY > 291 && app.mouseY < 392) {
+			Main.screen=1;
+		}
 	}
 
 }
