@@ -12,8 +12,8 @@ public class FinalScreen extends Screen {
 
 	void paint() {
 		app.fill(0);
-		app.textSize(20);
-		app.text("FIN", app.width/2, app.height/2);
+		app.textSize(80);
+		app.text("FIN", app.width/3, app.height/2);
 	}
 	
 	void move() {

@@ -10,6 +10,7 @@ public class Screen extends PApplet{
 	Screen(int posX, int posY, PApplet app){
 		this.posX=posX;
 		this.posY=posY;
+		this.app=app;
 	}
 	
 	void paint() {

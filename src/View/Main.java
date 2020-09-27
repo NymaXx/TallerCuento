@@ -19,6 +19,7 @@ public class Main extends PApplet{
 	StartScreen start;
 	FinalScreen fin;
 	GameScreen gameS;
+	int screen;
 	
 	
 	public void settings() {
@@ -34,17 +35,30 @@ public class Main extends PApplet{
 		rat = new RatV(0,0,467,212,this);
 		start = new StartScreen(0,0, this);
 		fin = new FinalScreen(0,0,this);
-		gameS = new GameScreen(40,80,this);
-		
+		gameS = new GameScreen(0,0,this);
+		screen =2;
 		user.createArrayList();
 		
 			
 	}
 	
 	public void draw() {
-		background(0);
+		background(255);
 		gameS.paint();
-		child.paint();
+		
+		switch(screen) {
+		case 0:
+			start.paint();
+			break;
+			
+		case 1: 
+			gameS.paint();
+			break;
+			
+		case 2: 
+			fin.paint();
+			break;
+		}
 		
 	}
 	
