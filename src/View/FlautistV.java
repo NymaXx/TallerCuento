@@ -27,8 +27,8 @@ public class FlautistV extends ObjectsV{
 	void interact() {
 		if(dist(this.posX+70, this.posY+200, app.mouseX, app.mouseY)<=200) {
 			
-			this.posX= app.mouseX;
-			this.posY= app.mouseY;		
-	}
+		 this.setPosX(app.mouseX);
+		 this.setPosY(app.mouseY);	
+		}
 	}
 }

@@ -88,6 +88,8 @@ public class Main extends PApplet{
 		rat.advice();
 		mayor.advice();
 		flaut.advice();
+		sign.advice();
+		
 			if(start.getPosX()<=-188) {
 				
 				child.advice();
@@ -113,6 +115,7 @@ public class Main extends PApplet{
 			rat.interact();
 			mayor.interact();
 			flaut.interact();
+			sign.interact();
 			
 			if(start.getPosX()<=-188) {
 				
